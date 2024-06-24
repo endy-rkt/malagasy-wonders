@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom'; // Import directly
+import { Link, NavLink,useNavigate } from 'react-router-dom'; // Import directly
 import styled from 'styled-components';
 
 // Styled components for the navbar
@@ -97,9 +97,11 @@ const HamburgerLine = styled.span`
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // State for hamburger menu
 
+  const navigate = useNavigate();
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
 
   return (
     <NavContainer>
@@ -117,7 +119,7 @@ const Navbar = () => {
           <NavLinkStyled to="/history">History & Heritage</NavLinkStyled>
         </li>
         <li>
-          <NavLinkStyled to="/quizz">Test Your Knowledge</NavLinkStyled>
+          <NavLinkStyled to="/quizz" className="quizz">Test Your Knowledge</NavLinkStyled>
         </li>
       </NavLinks>
       <HamburgerMenu onClick={toggleMenu}>

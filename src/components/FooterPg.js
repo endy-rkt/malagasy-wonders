@@ -49,7 +49,7 @@ const SocialIcon = styled.img`
 const FooterPage = () => {
   return (
       <Footer>
-        <Copyright>© 2024 Relume. All rights reserved.</Copyright>
+        <Copyright>© 2024 All rights reserved.</Copyright>
         <LinksContainer>
           <Link href="#">Privacy Policy</Link>
           <Link href="#">Terms and Conditions</Link>

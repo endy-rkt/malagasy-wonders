@@ -1,18 +1,15 @@
-import Discover from "./components/Discover";
-import Explore from "./components/Explore";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import FooterPage from "./components/FooterPg";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Homepage } from "./pages/Homepage";
+import { Quizzpage } from "./pages/Quizzpage";
+import { Page404 } from "./pages/Page404";
 
 function App() {
   return (
-    <div className="App">
-		<Navbar/>
-		<Hero/>
-		<Discover/>
-		<Explore/>
-		<FooterPage/>
-    </div>
+    <Routes>
+		<Route path="/" element={<Homepage/>}></Route>
+		<Route path="/quizz" element={<Quizzpage/>}></Route>
+		<Route path="*" element={<Page404/>}></Route>
+	</Routes>
   );
 }
 

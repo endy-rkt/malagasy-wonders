@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import test from "../images/baobab-allee.jpg"
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,7 +10,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
   background-color: #F0EEE8;
-  background-image: url("https://i.imgur.com/o9RgNhO.jpg"); /* Replace with actual image URL */
+  background-image: url(${test});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
