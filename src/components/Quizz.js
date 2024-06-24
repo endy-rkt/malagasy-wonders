@@ -1,180 +1,113 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 100vh;
-  background-color: #f0eeee;
-  padding: 2rem;
-`;
+const proverbs = [
+  {
+    id: 1,
+    proverb: "Vao maraina no mahafantatra ny hasasarana ny mandeha lavitra",
+    meaning: "Only in the morning does the one who travels far know the difficulty.",
+    options: ["This proverb is about patience.", "This proverb is about planning.", "This proverb is about perseverance. (Correct)"],
+  },
+  {
+    id: 2,
+    proverb: "Ny hendry tsy mandeha lavitra mitady fahavalo, fa ny adala no manao izany",
+    meaning: "The wise man does not travel far to seek an enemy, but the fool does so.",
+    options: ["This proverb is about choosing battles wisely. (Correct)", "This proverb is about the importance of travel.", "This proverb is about the dangers of the unknown."],
+  },
+  // Add more proverbs here with their IDs, proverbs, meanings, and options
+];
 
-const Title = styled.h1`
-  font-size: 2.5em;
-  margin-bottom: 2rem;
-`;
-
-const QuestionContainer = styled.div`
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 5px;
-  margin-bottom: 2rem;
-`;
-
-const Question = styled.p`
-  font-size: 1.1em;
-  margin-bottom: 0.5rem;
-`;
-
-const OptionsContainer = styled.div`;
-`;
-
-const Option = styled.label`
-  display: block;
-  font-size: 1em;
-  margin-bottom: 1rem;
-  cursor: pointer;
-
-  input[type="radio"] {
-    margin-right: 1rem;
-  }
-`;
-
-const Button = styled.button`
-  padding: 1rem 2rem;
-  background-color: #2bb9ae;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease-in-out;
-
-  &:hover {
-    background-color: #27aa9a;
-  }
-`;
-
-const Feedback = styled.p`
-  font-size: 1.1em;
-  margin-top: 1rem;
-  color: #2bb9ae;
-`;
-
-const Quiz = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [showFeedback, setShowFeedback] = useState(false);
-  const [feedback, setFeedback] = useState(null);
+const QuizSection = () => {
+  const [isQuizStarted, setIsQuizStarted] = useState(false);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [userAnswers, setUserAnswers] = useState([]);
   const [score, setScore] = useState(0);
 
-  const questions = [
-    {
-      category: 'Proverb',
-      question: 'Volana tsara, tsy very maina',
-      answer: 'A good word never dries out.',
-      options: [
-        'The early bird gets the worm.',
-        'A good word never dries out.',
-        'There is no place like home.',
-      ],
-    },
-    {
-      category: 'History',
-      question: 'What kingdom was the first major Malagasy state?',
-      answer: 'The Kingdom of Imerina',
-      options: [
-        'The Kingdom of Sakalava',
-        'The Kingdom of Betsimisaraka',
-        'The Kingdom of Imerina',
-      ],
-    },
-    {
-      category: 'Folklore',
-      question: 'What mythical creature is said to guard the forests of Madagascar?',
-      answer: 'The Vazimba',
-      options: [
-        'The Fanaloka',
-        'The Aye-Aye',
-        'The Vazimba',
-      ],
-    },
-    {
-      category: 'Myth',
-      question: 'According to Malagasy mythology, how were the stars created?',
-      answer: 'From the tears of the Creator',
-      options: [
-        'From the sparks of a celestial blacksmith',
-        'From the laughter of the ancestors',
-        'From the tears of the Creator',
-      ],
-    },
-  ];
-
-  const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
-    setShowFeedback(false);
-  };
-
-  const handleSubmit = () => {
-    if (selectedOption) {
-      const correctAnswer = questions[currentQuestion].answer;
-      setShowFeedback(true);
-      setFeedback(selectedOption === correctAnswer ? 'Correct!' : 'Incorrect. The answer is: ' + correctAnswer);
-      if (selectedOption === correctAnswer) {
-        setScore(score + 1);
-      }
-    }
+  const startQuiz = () => {
+    setIsQuizStarted(true);
+    setCurrentQuestionIndex(0);
+    setUserAnswers([]);
+    setScore(0); // Reset score on starting a new quiz
   };
 
   const handleNextQuestion = () => {
-    if (currentQuestion + 1 < questions.length) {
-		setCurrentQuestion(currentQuestion + 1);
-		setSelectedOption(null);
-		setShowFeedback(false);
-	  } else {
-		// All questions answered, show final score
-		setFeedback('You finished the quiz! Your score is ' + score + ' out of ' + questions.length);
-	  }
-	};
-  
-	return (
-	  <Wrapper>
-		<Title>Malagasy Quiz</Title>
-		{currentQuestion < questions.length ? (
-		  <>
-			<QuestionContainer>
-			  <Question>
-				{questions[currentQuestion].category} - {questions[currentQuestion].question}
-			  </Question>
-			  <OptionsContainer>
-				{questions[currentQuestion].options.map((option, index) => (
-				  <Option key={index}>
-					<input
-					  type="radio"
-					  id={`option${index}`}
-					  name="answer"
-					  value={option}
-					  checked={selectedOption === option}
-					  onChange={handleOptionChange}
-					/>
-					{option}
-				  </Option>
-				))}
-			  </OptionsContainer>
-			</QuestionContainer>
-			{showFeedback && <Feedback>{feedback}</Feedback>}
-			<Button onClick={handleSubmit}>Submit Answer</Button>
-		  </>
-		) : (
-		  <Feedback>{feedback}</Feedback>
-		)}
-	  </Wrapper>
-	);
+    if (currentQuestionIndex < proverbs.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    }
   };
-  
-  export default Quiz;
-  
+
+  const handleAnswerSelect = (optionIndex) => {
+    const newAnswers = [...userAnswers];
+    newAnswers[currentQuestionIndex] = optionIndex;
+    setUserAnswers(newAnswers);
+  };
+
+  const calculateScore = () => {
+    let totalScore = 0;
+    userAnswers.forEach((answerIndex, questionIndex) => {
+      if (answerIndex === proverbs[questionIndex].options.indexOf("Correct)")) {
+        totalScore++;
+      }
+    });
+    setScore(totalScore);
+  };
+
+  const renderQuizContent = () => {
+    if (!isQuizStarted) {
+      return (
+        <div>
+          <h2>Take a Quiz!</h2>
+          <button onClick={startQuiz}>Start Quiz</button>
+        </div>
+      );
+    } else if (currentQuestionIndex === proverbs.length) {
+      calculateScore();
+      return (
+        <div>
+          <h2>Quiz Results</h2>
+          <p>Your score: {score} out of {proverbs.length}</p>
+          <button onClick={() => setIsQuizStarted(false)}>Restart Quiz</button>
+        </div>
+      );
+    } else {
+      const currentQuestion = proverbs[currentQuestionIndex];
+      return (
+        <div>
+          <h2>Question {currentQuestionIndex + 1}</h2>
+          <p>{currentQuestion.proverb}</p>
+          <ul>
+            {currentQuestion.options.map((option, index) => (
+              <li key={index}>
+                <input
+                  type="radio"
+                  id={`option-${index}`}
+                  name="answer"
+                  value={index}
+                  checked={userAnswers[currentQuestionIndex] === index}
+                  onChange={() => handleAnswerSelect(index)}
+                />
+                <label for={`option-${index}`}>{option}</label>
+              </li>
+            ))}
+          </ul>
+          <button disabled={currentQuestionIndex === proverbs.length - 1} onClick={handleNextQuestion}>
+            Next Question
+          </button>
+        </div>
+      );
+    }
+  };
+
+  return (
+    <QuizContainer>
+      {renderQuizContent()}
+    </QuizContainer>
+  );
+};
+
+const QuizContainer = styled.div`
+  text-align: center;
+  padding: 2rem;
+`;
+
+export default QuizSection;

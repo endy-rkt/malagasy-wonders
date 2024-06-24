@@ -9,6 +9,10 @@ const Footer = styled.div`
   background-color: #f0eeee;
   color: #333;
 
+  /* Additional styles for responsive behavior */
+  min-height: 50px; /* Set a minimum height for the footer */
+  margin-top: auto; /* Push the footer to the bottom */
+
   @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
@@ -44,23 +48,23 @@ const SocialContainer = styled.div`
 const SocialIcon = styled.img`
   width: 20px;
   height: 20px;
-`; // Assuming styledComponents.js stores your styled components
+`;
 
 const FooterPage = () => {
   return (
-      <Footer>
-        <Copyright>© 2024 All rights reserved.</Copyright>
-        <LinksContainer>
-          <Link href="#">Privacy Policy</Link>
-          <Link href="#">Terms and Conditions</Link>
-          <Link href="#">Cookie Policy</Link>
-        </LinksContainer>
-        <SocialContainer>
-          <SocialIcon src="path/to/social-icon-1.svg" alt="Social Media Icon 1" />
-          <SocialIcon src="path/to/social-icon-2.svg" alt="Social Media Icon 2" />
-          {/* Add more social media icons as needed */}
-        </SocialContainer>
-      </Footer>
+    <Footer>
+      <Copyright>© 2024 All rights reserved.</Copyright>
+      <LinksContainer>
+        <Link href="#">Privacy Policy</Link>
+        <Link href="#">Terms and Conditions</Link>
+        <Link href="#">Cookie Policy</Link>
+      </LinksContainer>
+      <SocialContainer>
+        <SocialIcon src="path/to/social-icon-1.svg" alt="Social Media Icon 1" />
+        <SocialIcon src="path/to/social-icon-2.svg" alt="Social Media Icon 2" />
+        {/* Add more social media icons as needed */}
+      </SocialContainer>
+    </Footer>
   );
 };
 
