@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import test from "../images/baobab-allee.jpg"
+import test from "../images/champ.jpg"
 import { useNavigate } from 'react-router';
 
 const Wrapper = styled.div`
@@ -12,24 +12,22 @@ const Wrapper = styled.div`
   height: auto;
  `;
 
-const ContentContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height:auto;
-  background-color: #F0EEE8;
-  background-image: url(${test});
-   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
-  border-radius: 10px; /* Rounded corners for a softer look */
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
+ const ContentContainer = styled.div`
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ width: 100%;
+ height: auto;
+ background-image: url(${test});
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+ 
+ padding: 2rem;
+ border-radius: 10px;
+ @media (max-width: 768px) {
+   width: 100%;
+ }
 `;
 
 const Title = styled.h1`
@@ -45,7 +43,6 @@ const TextContainer = styled.div`
   justify-content: space-between;
   margin-top: 2rem;
   width: 60%;
-
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -54,16 +51,15 @@ const TextContainer = styled.div`
 const TextColumn = styled.div`
   width: 45%;
   margin-bottom: 2rem;
-
   h3 {
     font-size: 1.3em;
-    color: #2BB9AE; /* Primary brand color */
+    color: #1BB9AE; /* Primary brand color */
     margin-bottom: 1rem;
   }
 
   p {
     font-size: 1em;
-    color: #333;
+    color: white;
     line-height: 1.5;
   }
 
@@ -102,7 +98,6 @@ const LearnMoreButton = styled.button`
   cursor: pointer;
   margin-left: 1rem;
   transition: all 0.3s ease-in-out;
-
   &:hover {
     background-color: #EAEAEA;
   }

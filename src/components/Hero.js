@@ -7,7 +7,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 75%;
+  margin: 1px auto;
   height: auto;
   padding: 10px 10px;
   background-color: #F0EEE8;
@@ -15,24 +16,26 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  border:5px
+  border:solid #2BB9AE 1px;
+ border-radius: 10px;
 `;
 
 const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: auto;
   h1 {
     font-size: 3em;
     text-align: center;
-    color: #fff;
+    color: #2BB9AE;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   
 
   h2 {
     font-size: 1.5em;
     text-align: center;
-    color: #fff;
+    color: #2BB9AE;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   }
 `;

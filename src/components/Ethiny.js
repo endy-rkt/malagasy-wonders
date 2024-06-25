@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import betsileo from "../images/bestileo.jpg";
+import merina from "../images/merina.jpg"
 
 const ethnicities = [
   {
     name: "Merina",
     location: "Central Highlands",
-    image: "path/to/merina.jpg",
+    image: merina,
     traditions: [
       "Ancestral veneration (Famadihana)",
       "Rice cultivation and elaborate rice ceremonies (Vary Sawa)",
@@ -17,7 +19,7 @@ const ethnicities = [
   {
     name: "Betsileo",
     location: "South-central Highlands",
-    image: "path/to/betsileo.jpg",
+    image: betsileo,
     traditions: [
       "Zebu cattle herding",
       "Unique tomb architecture (Trano Silava)",
@@ -32,7 +34,7 @@ const ethnicities = [
 const EthnicityCard = ({ ethnicity }) => {
   return (
     <CardContainer>
-      <Image src={ethnicity.image} alt={ethnicity.name} />
+      <img src={ethnicity.image} alt={ethnicity.name} />
       <CardContent>
         <h3>{ethnicity.name}</h3>
         <p>Location: {ethnicity.location}</p>
@@ -51,13 +53,21 @@ const EthnicityCard = ({ ethnicity }) => {
 const EthnicitiesSection = () => {
   return (
     <EthnicitiesList>
-      <h2>Ethnicities of Madagascar</h2>
+      <Title>Ethnicities of Madagascar</Title>
       {ethnicities.map((ethnicity) => (
         <EthnicityCard key={ethnicity.name} ethnicity={ethnicity} />
       ))}
     </EthnicitiesList>
   );
 };
+
+const Title = styled.h2`
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+`;
 
 const EthnicitiesList = styled.ul`
   list-style: none;
@@ -73,13 +83,12 @@ const CardContainer = styled.div`
   border-radius: 4px;
   margin-bottom: 1rem;
   padding: 1rem;
-`;
-
-const Image = styled.img`
-  width: 150px;
+  img{
+     width: 150px;
   height: auto;
   margin-bottom: 0.5rem;
-  border-radius: 50%; /* Circular image */
+  border-radius: 50%; 
+  }
 `;
 
 const CardContent = styled.div`

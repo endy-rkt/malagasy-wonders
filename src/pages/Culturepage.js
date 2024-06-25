@@ -10,7 +10,6 @@ export const Culturepage = () => {
   return (
     <div>
         <Navbar/>
-        <CultureSection/>
         <DiscoverTradition/>
         <ProverbSection/>
         <MythAndLegendSection/>

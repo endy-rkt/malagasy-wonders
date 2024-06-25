@@ -15,11 +15,13 @@ const NavContainer = styled.nav`
   @media (max-width: 768px) {
     flex-wrap: wrap;
   }
+    h3,a {
+      color:#2BB9AE;
+      text-decoration:none !important;
+    }
 `;
 
-const Logo = styled.img`
-  width: 100px;
-`;
+
 
 const NavLinks = styled.ul`
   display: flex;
@@ -106,7 +108,7 @@ const Navbar = () => {
   return (
     <NavContainer>
       <Link to="/">
-        <Logo src="path/to/your/logo.png" alt="Logo" />
+        <h3>Gasikarako</h3>
       </Link>
       <NavLinks className={isOpen ? 'show' : ''}>
         <li>

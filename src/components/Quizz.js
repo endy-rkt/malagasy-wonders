@@ -9,7 +9,7 @@ const proverbs = [
     options: [
       "This proverb is about patience.",
       "This proverb is about planning.",
-      "This proverb is about perseverance. (Correct)",
+      "This proverb is about perseverance.",
     ],
   },
   {
@@ -17,7 +17,7 @@ const proverbs = [
     proverb: "Ny hendry tsy mandeha lavitra mitady fahavalo, fa ny adala no manao izany",
     meaning: "The wise man does not travel far to seek an enemy, but the fool does so.",
     options: [
-      "This proverb is about choosing battles wisely. (Correct)",
+      "This proverb is about choosing battles wisely.",
       "This proverb is about the importance of travel.",
       "This proverb is about the dangers of the unknown.",
     ],
@@ -63,24 +63,24 @@ const QuizSection = () => {
   const renderQuizContent = () => {
     if (!isQuizStarted) {
       return (
-        <div>
+        <Container>
           <h2>Take a Quiz!</h2>
           <button onClick={startQuiz}>Start Quiz</button>
-        </div>
+        </Container>
       );
     } else if (currentQuestionIndex === proverbs.length) {
       calculateScore();
       return (
-        <div>
+        <Container>
           <h2>Quiz Results</h2>
           <p>Your score: {score} out of {proverbs.length}</p>
           <button onClick={() => setIsQuizStarted(false)}>Restart Quiz</button>
-        </div>
+        </Container>
       );
     } else {
       const currentQuestion = proverbs[currentQuestionIndex];
       return (
-        <div>
+        <Container>
           <h2>Question {currentQuestionIndex + 1}</h2>
           <p>{currentQuestion.proverb}</p>
           <ul>
@@ -104,7 +104,7 @@ const QuizSection = () => {
               >
                 Next Question
               </button>
-            </div>
+            </Container>
           );
         }
       };
@@ -113,15 +113,30 @@ const QuizSection = () => {
     };
     
     const QuizContainer = styled.div`
-      text-align: center;
-      padding: 2rem;
-      /* Center the content horizontally and vertically */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh; /* Ensure content fills viewport height */
-    `;
+    text-align: center;
+    padding: 2rem;
+
+    /* Center the content horizontally and vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Ensure content fills viewport height and has a minimum width */
+    min-height: 100vh;
+    min-width: 400px; /* Adjust as desired for minimum width */
+  `;
     
+    const Container = styled.div`
+  margin: 100px auto;
+  margin-bottom:400px;  /* Centers the container horizontally and vertically */
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;  /* Stacks elements vertically */
+  align-items: center;   /* Centers elements horizontally within the container */
+  /* No need for align-content: center; in this case */
+  justify-content: center;  /* Centers elements vertically within the container */
+`;
+
     export default QuizSection;
     

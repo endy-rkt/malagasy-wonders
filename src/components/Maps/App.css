@@ -1,0 +1,114 @@
+.map
+{
+	width: 50vw;
+	height: auto;
+	background-color: #3dbce3!important;
+}
+
+#Madagascar
+{
+	filter: drop-shadow(0 0 10px #3a3737e8);
+}
+.map_source
+{
+	background-color: #3dbce3!important;
+	width: 100%!important;
+	height: 100%!important;
+}
+.st0
+{
+  transition: 0.5s;
+}
+.st0:hover
+{
+  filter: brightness(1.5);
+}
+.boeny,.sofia,.betsiboka,.melaky
+{	
+  cursor: pointer;
+  fill: #e599f3!important;
+}
+.diana,.sava
+{
+	cursor: pointer;
+	fill: #9bf67f!important;
+}
+.atsinanana,.analanjirofo,.alaotra
+{
+	cursor: pointer;
+	fill: #fd723b!important;
+}
+.vatovavy,.haute,.amoro,.ihorombe,.atsimo
+{
+	cursor: pointer;
+	fill: #7a1273!important;
+}
+.anosy,.androy,.andrefana,.menabe
+{
+	cursor: pointer;
+	fill: #40563f!important;
+}
+.bongolava,.itasy,.vakinankaratra,.analamanga
+{
+	cursor: pointer;
+	fill: #e62323!important;
+}
+.legend
+{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: auto;
+	height: auto;
+	margin: 25vh 35vw;
+}
+.bloc
+{
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	height:4vh;
+	margin: 1vh 0;
+	width: 100%;
+	position: relative;
+}
+.couleur
+{
+	height:4vh;
+	margin: 1vh 0.5vw;
+	width: 5vw;
+	box-shadow: 0 0 5px rgb(48, 45, 45);
+	position: relative;
+}
+#tana
+{
+  background-color: #e62323;
+}
+#antsiranana
+{
+	background-color: #9bf67f;
+}
+#toamasina
+{
+  background-color: #fd723b;
+}
+#fianarantsoa
+{
+	background-color: #7a1273;
+}
+#toliara
+{
+	background-color: #40563f;
+}
+#mahajanga
+{
+	background-color: #e599f3;
+}
+span
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bolder;
+	color: rgb(30, 19, 75);
+	font-size: 1vw;
+}

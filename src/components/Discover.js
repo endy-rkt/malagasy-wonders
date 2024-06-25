@@ -1,10 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
+import aloalo from "../images/aloalo.jpg"
 
 const DiscoverContainer = styled.div`
   max-height: calc(100vh - 100px);
-  margin: 50px;
+  margin: 10px 2px;
   @media (max-width: 768px) {
     margin: 20px;
   }
@@ -17,10 +18,7 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100%;
   height: auto;
-  background-image: url("path/to/your/image.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+ 
 `;
 
 const ContentContainer = styled.div`
@@ -31,6 +29,11 @@ const ContentContainer = styled.div`
    width: 100%;
   height: 100%;
   background-color: #F0EEE8;
+  background-image: url(${aloalo});
+ background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+ border-radius: 10px;
   @media (max-width: 768px) {
     width: 100%; /* Make content container full width on smaller screens */
     margin-top: 50px; /* Adjust top margin for smaller screens */
@@ -41,7 +44,7 @@ const ContentContainer = styled.div`
 const Title = styled.h1`
   font-size: 3em;
   text-align: center;
-  color: #fff;
+  color:#2BB9AE;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 768px) {
@@ -66,13 +69,13 @@ const TextColumn = styled.div`
 
   h3 {
     font-size: 1.3em;
-    color: #fff;
+    color: #2BB9AE;
     margin-bottom: 1rem;
   }
 
   p {
     font-size: 1em;
-    color: #ccc;
+    color: #eee;
     line-height: 1.5;
   }
 

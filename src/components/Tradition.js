@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import kabary from "../images/kabary.jpg"
+import famadihana from "../images/famadihana.jpg"
 
 const DiscoverTradition = () => {
   return (
@@ -7,7 +9,7 @@ const DiscoverTradition = () => {
       <h2>Discover Malagasy Traditions</h2>
       <TraditionList>
         <TraditionItem>
-          <TraditionImage src="path/to/famadihana.jpg" alt="Famadihana Ceremony" />
+          <TraditionImage src={famadihana} alt="Famadihana Ceremony" />
           <TraditionText>
             <h3>Famadihana - The Turning of the Bones</h3>
             <p>
@@ -21,15 +23,13 @@ const DiscoverTradition = () => {
           </TraditionText>
         </TraditionItem>
         <TraditionItem>
-          <TraditionImage src="path/to/image2.jpg" alt="Salegy Dancers" />
+          <TraditionImage src={kabary} alt="Salegy Dancers" />
           <TraditionText>
-            <h3>Salegy - The Rhythm of Life</h3>
+            <h3>Kabary malagasy</h3>
             <p>
-              Salegy is a vibrant music and dance tradition originating from the
-              northern coast of Madagascar. It features a distinctive rhythm played
-              on the 'maravany' (a bamboo xylophone) and the 'katy' (a ribbed gourd
-              instrument), accompanied by energetic dancing and lively singing.
-              Salegy is a celebration of life, community, and cultural identity.
+            Kabary Malagasy, translating to "speech" or "debate" in Malagasy, transcends the realm of everyday conversation. It's a captivating art form deeply woven into the cultural fabric of Madagascar, particularly in the central region of Analamanga.
+
+More Than Conversation: Kabary isn't just a chat. It's a meticulously crafted performance. Skilled orators, called "mpikabary," weave a tapestry of words, proverbs, metaphors, and captivating storytelling. These elements often dance alongside the rhythmic melodies of traditional instruments like the 'valiha' (a zither-like instrument) and the pulsating beats of the 'sodina' (drum).
             </p>
           </TraditionText>
         </TraditionItem>

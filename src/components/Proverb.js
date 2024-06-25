@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const proverbs = [
   { id: 1, proverb: "Vao maraina no mahafantatra ny hasasarana ny mandeha lavitra", meaning: "Only in the morning does the one who travels far know the difficulty." },
   { id: 2, proverb: "Ny hendry tsy mandeha lavitra mitady fahavalo, fa ny adala no manao izany", meaning: "The wise man does not travel far to seek an enemy, but the fool does so." },
+  { id: 3, proverb: "Ny hendry tsy mandeha lavitra mitady fahavalo, fa ny adala no manao izany", meaning: "The wise man does not travel far to seek an enemy, but the fool does so." },
   // Add more proverbs here with their IDs, proverbs, and meanings
 ];
 
@@ -16,12 +17,12 @@ const ProverbSection = () => {
   }, [currentProverb]); // Add currentProverb as a dependency
 
   const handleNext = () => {
-    const nextIndex = (currentProverb === proverbs.length) ? 0 : (currentProverb + 1) % proverbs.length;
+    const nextIndex = currentProverb + 1;
     setCurrentProverb(proverbs[nextIndex].id);
   };
 
   const handlePrev = () => {
-    const prevIndex = (currentProverb - 1 + proverbs.length) % proverbs.length;
+    const prevIndex = currentProverb - 1;
     setCurrentProverb(proverbs[prevIndex].id);
   };
 

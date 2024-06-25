@@ -20,11 +20,8 @@ const historyData = [
 const HistorySection = () => {
   return (
     <HistoryContainer>
-      <HistoryMap>
-        {/* <MadagascarMap /> */}
-      </HistoryMap>
       <HistoryContent>
-        <h2>History of Madagascar</h2>
+        <Title>History of Madagascar</Title>
         <p>{historyData[0].description}</p>
         <h3>Timeline</h3>
         <ul>
@@ -45,15 +42,12 @@ const HistoryContainer = styled.div`
   flex-wrap: wrap; /* Allow content to wrap on smaller screens */
 `;
 
-const HistoryMap = styled.div`
-  flex: 0 0 50%;
-  padding: 1rem;
-
-  @media (max-width: 768px) {
-    /* Responsive styles for smaller screens */
-    flex: 1 0 100%; /* Map takes full width */
-    margin-bottom: 1rem;
-  }
+const Title = styled.h2`
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
 `;
 
 const HistoryContent = styled.div`

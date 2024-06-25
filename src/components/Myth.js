@@ -1,18 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import Andrianampoinimerina from "../images/Andrianampoinimerina.jpg"
+import darafify from "../images/darafify.jpg"
 
 const mythsAndLegends = [
   {
     title: "The Legend of Andrianampoinimerina",
-    image: "path/to/andrianampoinimerina.jpg",
+    image: Andrianampoinimerina,
     description:
       "Andrianampoinimerina was a powerful 18th-century king who unified much of the central highlands of Madagascar. Legend tells of his cunning strategies, magical powers, and unwavering determination in building his kingdom.",
   },
   {
-    title: "The Tale of Babakoto",
-    image: "path/to/babakoto.jpg",
+    title: " The Trickster Spirit of Madagascar",
+    image: darafify,
     description:
-      "Babakoto is a mischievous trickster spirit in Malagasy folklore. Stories depict him as a clever prankster who often outsmarts humans and brings both chaos and humor to their lives.",
+    "Madagascar's folklore boasts a captivating character named Darafify. Unlike the benevolent spirits of some cultures, Darafify is a mischievous trickster, renowned for his cunning pranks and playful chaos. Stories depict him as a clever and elusive figure who often outsmarts humans, leaving them bewildered and sometimes frustrated, but also undeniably entertained."
+
   },
   // Add more myths and legends here
 ];
@@ -58,8 +61,8 @@ const MythCard = styled.li`
 `;
 
 const MythImage = styled.img`
-  width: 100%;
-  max-width: 100%; /* Ensure image scales down on smaller screens */
+  width: 50%;
+  max-width: 100%;
   margin-bottom: 0.5rem;
 `;
 

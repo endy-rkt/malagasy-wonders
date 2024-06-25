@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import gmailIco from "../images/mail-ico.png"
+import githubIco from "../images/github-ico.png"
+import { useNavigate } from "react-router";
 
 const Footer = styled.div`
   display: flex;
-  margin-top: 50px !important;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
@@ -12,7 +14,6 @@ const Footer = styled.div`
 
   /* Additional styles for responsive behavior */
   min-height: 50px; /* Set a minimum height for the footer */
-  margin-top: auto; /* Push the footer to the bottom */
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -44,14 +45,21 @@ const Link = styled.a`
 const SocialContainer = styled.div`
   display: flex;
   gap: 1rem;
+  img{
+    width:35px;
+    height:35px;
+    cursor:pointer;
+  }
 `;
 
-const SocialIcon = styled.img`
-  width: 20px;
-  height: 20px;
-`;
+
 
 const FooterPage = () => {
+  const navigate = useNavigate();
+
+  const handleEmailClick = () => {
+    window.location.href = `mailto:zk818019@gmail.com`;
+  }
   return (
     <Footer>
       <Copyright>© 2024 All rights reserved.</Copyright>
@@ -61,9 +69,8 @@ const FooterPage = () => {
         <Link href="#">Cookie Policy</Link>
       </LinksContainer>
       <SocialContainer>
-        <SocialIcon src="path/to/social-icon-1.svg" alt="Social Media Icon 1" />
-        <SocialIcon src="path/to/social-icon-2.svg" alt="Social Media Icon 2" />
-        {/* Add more social media icons as needed */}
+          <img className="icon" src={gmailIco} alt="gmail" onClick={()=>handleEmailClick()}/>
+          <img className="icon"src={githubIco} alt="github" href="https://github.com/endy-rkt/malagasy-wonders"/>
       </SocialContainer>
     </Footer>
   );

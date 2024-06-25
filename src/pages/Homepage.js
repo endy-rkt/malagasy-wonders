@@ -11,8 +11,8 @@ export const Homepage = () => {
     <Container>
       <Navbar className='home'/>
       <Discover />
-	  <Explore/>
-	  <Hero/>
+	    <Explore/>
+	    <Hero/>
       <FooterPage />
     </Container>
   );
