@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -7,20 +8,20 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  height: auto;
+  padding: 10px 10px;
   background-color: #F0EEE8;
   background-image: url("path/to/your/image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  border:5px
 `;
 
 const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
-
   h1 {
     font-size: 3em;
     text-align: center;
@@ -74,18 +75,26 @@ const ExploreButton = styled.button`
 `;
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleClickBtn = e =>{
+    e.preventDefault();
+
+    navigate("/quizz");
+  }
+
   return (
     <Wrapper>
       <TitleContainer>
-        <h1>Discover the Cultural Tapestry of Madagascar</h1>
-        <h2>Immerse yourself in the rich heritage and traditions</h2>
+        <h1>Test Your Madagascar Knowledge!</h1>
+        <h2>Ready to dive into Madagascar's rich culture?</h2>
       </TitleContainer>
       <ButtonContainer>
-        <ExploreButton>Explore</ExploreButton>
-        <button className='left-btn'>Learn More</button>
+        <ExploreButton to="/quiz" onClick={(e)=>handleClickBtn(e)}>Take the Quiz</ExploreButton>
       </ButtonContainer>
     </Wrapper>
   );
 };
+
 
 export default Hero;

@@ -1,8 +1,9 @@
-import styled from "styled-components";
 import React from "react";
+import styled from "styled-components";
 
 const Footer = styled.div`
   display: flex;
+  margin-top: 50px !important;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;

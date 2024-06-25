@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import test from "../images/baobab-allee.jpg"
+import { useNavigate } from 'react-router';
 
 const Wrapper = styled.div`
   display: flex;
@@ -8,20 +9,20 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
-  background-color: #F0EEE8;
-  background-image: url(${test});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-`;
+  height: auto;
+ `;
 
 const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
-  margin-top: 100px;
+  width: 100%;
+  height:auto;
+  background-color: #F0EEE8;
+  background-image: url(${test});
+   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   padding: 2rem;
   background-color: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
   border-radius: 10px; /* Rounded corners for a softer look */
@@ -107,37 +108,42 @@ const LearnMoreButton = styled.button`
   }
 `;
 
+
+
 const Explore = () => {
+  const navigate = useNavigate();
+
+  const handleClickBtn = e=>{
+    e.preventDefault();
+
+    navigate("/culture");
+  }
+
   return (
     <Wrapper>
       <ContentContainer>
-        <Title>Discover the Wonders of Madagascar</Title>
+        <Title>Delve into the Heart of Malagasy Culture</Title>
         <TextContainer>
           <TextColumn>
-            <h3>Uncover Cultural Treasures</h3>
+            <h3>Uncover a Tapestry of Traditions</h3>
             <p>
-              Immerse yourself in the vibrant traditions, rich history, and
-              diverse ethnicities of Madagascar. Navigate our website to
-              uncover the beauty and uniqueness of Malagasy culture.
+              Madagascar boasts a rich cultural heritage filled with vibrant traditions passed down through generations. Witness the unique Famadihana ceremony, where ancestors are exhumed and celebrated in a lively festival. Explore the captivating world of Malagasy folklore, where tales of benevolent Vazimba spirits and mischievous tricksters like Iarivo, the fox-like creature, come alive. Immerse yourself in the wisdom of Malagasy proverbs, like "Ny henatra no mahafoy lalana" (Even the wisest person can lose their way), reflecting the importance of learning throughout life.
             </p>
           </TextColumn>
           <TextColumn>
-            <h3>Plan Your Journey</h3>
+            <h3>Discover the Power of Ancestral Beliefs</h3>
             <p>
-              Get practical
-				get practical travel tips, explore must-see destinations, and
-				discover hidden gems. Start planning your unforgettable
-				Malagasy adventure today!
-		  </p>
-		</TextColumn>
-	  </TextContainer>
-	  <ButtonContainer>
-		<ExploreButton>Explore Madagascar</ExploreButton>
-		<LearnMoreButton>Learn More</LearnMoreButton>
-	  </ButtonContainer>
-	</ContentContainer>
-  </Wrapper>
-);
+              Ancestral reverence plays a vital role in Malagasy culture. The elaborate "Trano Manga" (ancestral houses) serve as a connection between the living and the departed. Witness the intricate wood carvings and vibrant colors adorning these houses, each detail holding a symbolic meaning. Explore the significance of "Fady" (taboos) that govern everyday life, reflecting the deep respect for ancestors and the natural world.
+            </p>
+          </TextColumn>
+        </TextContainer>
+        <ButtonContainer>
+          <ExploreButton onClick={(e)=>handleClickBtn(e)}>Explore Malagasy Culture</ExploreButton>
+        </ButtonContainer>
+      </ContentContainer>
+    </Wrapper>
+  );
 };
+
 
 export default Explore;

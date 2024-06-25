@@ -113,10 +113,10 @@ const Navbar = () => {
           <NavLinkStyled to="/">Discover Madagascar</NavLinkStyled>
         </li>
         <li>
-          <NavLinkStyled to="/culture">Culture & Tradition</NavLinkStyled>
+          <NavLinkStyled to="/history">History & Heritage</NavLinkStyled>
         </li>
         <li>
-          <NavLinkStyled to="/history">History & Heritage</NavLinkStyled>
+          <NavLinkStyled to="/culture">Culture & Tradition</NavLinkStyled>
         </li>
         <li>
           <NavLinkStyled to="/quizz" className="quizz">Test Your Knowledge</NavLinkStyled>

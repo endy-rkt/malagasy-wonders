@@ -9,7 +9,6 @@ export const Quizzpage = () => {
 	<>
 	<Navbar/>
 	<Quiz/>
-	<Rova/>
 	<FooterPage/>
 	</>
   )
