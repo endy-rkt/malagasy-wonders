@@ -9,12 +9,12 @@ import { MapDetails } from '../components/Maps/MapDetails'
 export const Historypage = () => {
   return (
     <>
-        <Navbar/>
-        <MapDetails/>
-        <HistorySection/>
-        <RulersSection/>
-        <EthnicitiesSection/>
-        <FooterPage/> 
+      <Navbar />
+      <MapDetails />
+
+      <RulersSection />
+      <EthnicitiesSection />
+      <FooterPage />
     </>
   )
 }
